@@ -5,6 +5,11 @@
  */
 package trpView;
 
+import javax.swing.JOptionPane;
+import trpModel.CuentaUsuario;
+import trpUtil.Mensaje;
+import trpUtil.Session;
+
 /**
  *
  * @author alx4a
@@ -124,7 +129,6 @@ public class AdminForm extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem6ActionPerformed
-
     /**
      * @param args the command line arguments
      */

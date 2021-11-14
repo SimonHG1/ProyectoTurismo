@@ -21,6 +21,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -119,12 +120,18 @@ public class Login extends javax.swing.JFrame {
             }
             Session.put("cuenta_usuario", model);
             //Cargar formulario principal
-            
-            if(model.getIdTipoUsuario() == 1){
-                AdminForm af = new AdminForm();
-                af.setVisible(true);
-            }else{
-                Mensaje.showError(this, "Usuario no tienen los permisos necesario para entrar");
+            switch (model.getIdTipoUsuario()) {
+                case 1:
+                    AdminForm af = new AdminForm();
+                    af.setVisible(true);
+                    break;
+                case 2:
+                    FuncionarioForm ff = new FuncionarioForm();
+                    ff.setVisible(true);
+                    break;
+                default:
+                    Mensaje.showError(this, "Usuario no tienen los permisos necesario para entrar");
+                    break;
             }
             
             this.dispose();
